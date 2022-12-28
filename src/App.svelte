@@ -5,6 +5,7 @@
   import SearchPanel from "$components/ui/panels/SearchPanel.svelte";
   import UserPanel from "$components/ui/panels/UserPanel.svelte";
   import InfoPanel from "$components/ui/panels/InfoPanel.svelte";
+  import OcrPanel from "$components/ui/panels/OcrPanel.svelte";
   import { keys } from "$data/key-data";
   import { showVideo } from "$store";
 
@@ -27,5 +28,6 @@
   <SearchPanel />
   <UserPanel />
   <InfoPanel />
+  <OcrPanel />
   <Map />
 </main>

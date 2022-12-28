@@ -28,6 +28,7 @@
     "vite": "^3.2.3"
   },
   "dependencies": {
-    "leaflet": "^1.9.3"
+    "leaflet": "^1.9.3",
+    "tesseract.js": "^4.0.2"
   }
 }
