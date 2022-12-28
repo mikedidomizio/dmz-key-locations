@@ -46,7 +46,7 @@ describe('ocr', () => {
         expect(result).toContain('Downtown Post Office')
     })
 
-    it('should match "control tower" and not "control room" when it\'s clearly control tower', () => {
+    test('should match "control tower" and not "control room" when it\'s clearly control tower', () => {
         const result = getDmzKeysFromWords([
             "CONTROL",
             "TOWER",
@@ -92,7 +92,7 @@ describe('ocr', () => {
         expect(result).toContain('Control Tower')
     });
 
-    it('should not match "locker" to police locker when it\'s the Police Locker Room', () => {
+    test('should not match "locker" to specific police lockers when it\'s the Police Locker Room', () => {
         const result = getDmzKeysFromWords([
             "POLICE",
             "ACADEMY",
@@ -114,7 +114,7 @@ describe('ocr', () => {
         expect(result).toContain('Police Academy Private Locker Room')
     });
 
-    it('should not return `null` ever', () => {
+    test('should not return `null` ever', () => {
         const result = getDmzKeysFromWords([
             "POLICE",
             "ACADEMY",

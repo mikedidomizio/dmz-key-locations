@@ -1,8 +1,6 @@
 import {keys} from "$data/key-data.js";
 
-// todo shadow vars
-
-const getWordOccurrencesInDmzKeys = (keys) => {
+const getWordOccurrencesInDmzKeys = () => {
     const dmzKeyTitles =  Object.values(keys).map(key => key.title)
     const words = {}
 
@@ -22,7 +20,7 @@ const getWordOccurrencesInDmzKeys = (keys) => {
     return words
 }
 
-const getUniqueWordsFromKeyTitles = (keys) => {
+const getUniqueWordsFromKeyTitles = () => {
     const keyOccurrences = getWordOccurrencesInDmzKeys(keys)
 
     return Object.entries(keyOccurrences).filter(([_, val]) => val[0] === 1)
@@ -42,7 +40,10 @@ function getNumberOfWordMatches(a, b) {
 }
 
 /**
- * Takes an array of words (generally OCR result) and returns the keys in the key-data file it matches by title
+ * Takes an array of strings and returns the DMZ keys in the key-data file it matches by title
+ * it first looks for DMZ keys that have unique words in them as we know if we find the word it has to be that specific DMZ key
+ * next it tries and finds the closest match per word
+ * after everything is done it removes any duplicates before returning
  * @param {string[]} words
  * @returns {string[]}
  */
@@ -60,7 +61,7 @@ export const getDmzKeysFromWords = (words) => {
         }
     }
 
-    // for all other words we loop through and try our best
+    // for all other words we loop through and try our best to match
     for (let word of words) {
         const wordOccurrencesInDmzKeys = getWordOccurrencesInDmzKeys(keys)
         let highestMatch = [null, 0]

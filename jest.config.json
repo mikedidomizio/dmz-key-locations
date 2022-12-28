@@ -6,7 +6,8 @@
   },
   "moduleFileExtensions": ["svelte", "js"],
   "moduleNameMapper": {
-    "^\\$data/(.*)$": "<rootDir>/src/data/$1"
+    "^\\$data/(.*)$": "<rootDir>/src/data/$1",
+    "^\\$scripts/(.*)$": "<rootDir>/src/scripts/$1"
   },
   "testEnvironment": "jsdom",
   "setupFilesAfterEnv": ["@testing-library/jest-dom/extend-expect"]

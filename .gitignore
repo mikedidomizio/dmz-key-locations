@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 coverage/
+
+# Tesseract generated file (not sure if we should put this in source control)
+eng.traineddata
