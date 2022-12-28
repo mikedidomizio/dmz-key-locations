@@ -1135,8 +1135,8 @@ export const keys = [
         "video": "90Rh-WTItAI"
     },
     {
-        "id": "zarqwa-red-village-appartment",
-        "title": "Zarqwa Red Village Appartment",
+        "id": "zarqwa-red-village-apartment",
+        "title": "Zarqwa Red Village Apartment",
         "location": {
             "x": 1948,
             "y": 1902

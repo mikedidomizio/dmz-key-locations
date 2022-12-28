@@ -1017,7 +1017,7 @@ export const keys = [
     video: "90Rh-WTItAI",
   },
   {
-    title: "Zarqwa Red Village Appartment",
+    title: "Zarqwa Red Village Apartment",
     location: {
       x: 1948,
       y: 1902,
@@ -1034,7 +1034,7 @@ export const keys = [
       y: 2371,
     },
     description: [
-      "The Zaya Radar Dome key leads to one of the large Radar buildings in Zaya Observatory. This one is located to the west of the bunker, with an easy to spot entrace at the ground floor coming from the east.",
+      "The Zaya Radar Dome key leads to one of the large Radar buildings in Zaya Observatory. This one is located to the west of the bunker, with an easy to spot entrance at the ground floor coming from the east.",
     ],
     video: "LAaajr_4_QQ",
   },
