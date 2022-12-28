@@ -812,7 +812,7 @@ export const keys = [
     tags: ["mission"],
   },
   {
-    title: "Sawah Crypto Mining Farm Key",
+    title: "Sawah Crypto Mining Farm",
     location: {
       x: 1276,
       y: 3321,
@@ -947,13 +947,13 @@ export const keys = [
     video: "p0-HK4yHmZg",
   },
   {
-    title: "Traveller's Luggage",
+    title: "Traveler's Luggage",
     location: {
       x: 2836,
       y: 2925,
     },
     description: [
-      "The Traveller's Luggage is a duffel bag located in the small waiting area overlooking the Al Malik Airport.",
+      "The Traveler's Luggage is a duffel bag located in the small waiting area overlooking the Al Malik Airport.",
       "The key can be acquired by completing Dead Drop, Legion tier 3",
     ],
     video: "q8DSYEJS6u4",
