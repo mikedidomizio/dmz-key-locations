@@ -907,8 +907,8 @@ export const keys = [
         ]
     },
     {
-        "id": "sawah-crypto-mining-farm",
-        "title": "Sawah Crypto Mining Farm",
+        "id": "sawah-crypto-mining-farm-key",
+        "title": "Sawah Crypto Mining Farm Key",
         "location": {
             "x": 1276,
             "y": 3321
@@ -1056,14 +1056,14 @@ export const keys = [
         "video": "p0-HK4yHmZg"
     },
     {
-        "id": "travelers-luggage",
-        "title": "Traveler's Luggage",
+        "id": "travellers-luggage",
+        "title": "Traveller's Luggage",
         "location": {
             "x": 2836,
             "y": 2925
         },
         "description": [
-            "The Traveler's Luggage is a duffel bag located in the small waiting area overlooking the Al Malik Airport.",
+            "The Traveller's Luggage is a duffel bag located in the small waiting area overlooking the Al Malik Airport.",
             "The key can be acquired by completing Dead Drop, Legion tier 3"
         ],
         "video": "q8DSYEJS6u4"
@@ -1154,7 +1154,7 @@ export const keys = [
             "y": 2371
         },
         "description": [
-            "The Zaya Radar Dome key leads to one of the large Radar buildings in Zaya Observatory. This one is located to the west of the bunker, with an easy to spot entrace at the ground floor coming from the east."
+            "The Zaya Radar Dome key leads to one of the large Radar buildings in Zaya Observatory. This one is located to the west of the bunker, with an easy to spot entrance at the ground floor coming from the east."
         ],
         "video": "LAaajr_4_QQ"
     },
