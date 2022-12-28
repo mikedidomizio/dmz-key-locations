@@ -6,164 +6,40 @@
     import { keys } from "$data/key-data";
     import {getDmzKeysFromWords} from "../../../lib/ocr.js";
 
-    // todo do not commit
-    let wordsArrFake = [
-        "FPS:",
-        "B1",
-        "LATENCY:",
-        "0OMS",
-        "PACKETLOSS:",
-        "0%",
-        "GPU:",
-        "6B°",
-        "<",
-        "KEYSTASH",
-        "=R",
-        "A",
-        "n",
-        "B",
-        "g",
-        "/",
-        "—",
-        ",",
-        "’",
-        "/",
-        "=",
-        "/’1",
-        "/",
-        "5",
-        "—",
-        "E",
-        "=",
-        "—",
-        "E",
-        "=",
-        "CONDITION:",
-        "USES",
-        "LEFT:",
-        "PRISTINE",
-        "=3",
-        "ABF.",
-        "AHMED",
-        "GROCERY",
-        "AHMED",
-        "GROCERY",
-        "B.C.",
-        "TOOLBOX",
-        "BANK",
-        "OF",
-        "ADAL",
-        "CANAL",
-        "-",
-        "ANTIQUITIES",
-        "STORE",
-        "OFFICE",
-        "-",
-        "STORE",
-        "OFFICE",
-        "-",
-        "KEY",
-        "TOP",
-        "STORY",
-        "APARTMENT",
-        "103",
-        "[",
-        "R",
-        "PIESGUEGET",
-        "-",
-        "-",
-        "-—",
-        "-",
-        "-",
-        "-",
-        "-",
-        "-",
-        "-",
-        "-",
-        "-",
-        "CAVERN",
-        "BOAT",
-        "CONTROL",
-        "TOWER",
-        "DOWNTOWN",
-        "FORT",
-        "BARRACK",
-        "LONGSHOREMAN'",
-        "MAWIZEH",
-        "CELL",
-        "DOCK",
-        "SHACK",
-        "KEY",
-        "KEY",
-        "-",
-        "WORN",
-        "POST",
-        "OFFICE",
-        "KEY",
-        "S",
-        "DUFFEL",
-        "BAG",
-        "SHOP",
-        "KEY",
-        "=",
-        "E",
-        "=",
-        "=",
-        "E",
-        "=",
-        "BUNGALOW",
-        "POLICE",
-        "ACADEMY",
-        "POLICE",
-        "ACADEMY",
-        "SCIENTIST'S",
-        "TARAQ",
-        "RIVER",
-        "TRAVELER'S",
-        "ROOM",
-        "KEY",
-        "KEY",
-        "PRIVATE",
-        "LOCKER",
-        "LOCKER",
-        "KEY",
-        "-",
-        "SUPPLY",
-        "SHACK",
-        "LUGGAGE",
-        "KEY",
-        "N",
-        "9.9.13447484",
-        "[49:255:1720+11]",
-        "Tm",
-        "[7I]I]I]][B][1E72I]74I]I]E.,!,.LQ.]"
-    ]
+    let progress = 0
 
-    const t = getDmzKeysFromWords(wordsArrFake)
+    const recognize = (base64Image) => {
+        return Tesseract.recognize(
+            base64Image,
+            'eng',
+            { logger: m => {
+                    if (m.status === 'recognizing text') {
+                        progress = parseInt(m.progress * 100)
+                    }
+            }}).then((data) => {
+                return data.data.words.map(word => word.text)
+        })
+    }
 
-    // Tesseract.recognize(
-    //     // 'https://tesseract.projectnaptha.com/img/eng_bw.png',
-    //     keys_ocr,
-    //     'eng',
-    //     // { logger: m => console.log(m) }
-    // ).then((data) => {
-    //     // clears out favorites
-    //     $favorites = []
-    //     console.log('favorites', $favorites)
-    //
-    //     const textArr = data.data.words.map(word => word.text)
-    //
-    //     console.log(data)
-    //     if (textArr.length) {
-    //         listOfKeys(keys, textArr)
-    //     }
-    // })
-
+    const onFileSelected = (e) => {
+        const image = e.target.files[0];
+        const reader = new FileReader();
+        reader.readAsDataURL(image);
+        reader.onload = async(e) => {
+            const words = await recognize(e.target.result)
+            // clears out favorites with ones sfrom files
+            $favorites = getDmzKeysFromWords(words)
+        };
+    }
 </script>
 
 <Panel panelTitle={"ocr"} openIcon={"./icons/heart.svg"} closeIconOffset={12}>
     <header>
         <h2>OCR Panel</h2>
+        {#if progress > 0}
+            <span>{progress}%</span>
+        {/if}
+        <input on:change={(e)=>onFileSelected(e)} type="file" name="image" accept="image/*" capture="environment">
     </header>
 </Panel>
 

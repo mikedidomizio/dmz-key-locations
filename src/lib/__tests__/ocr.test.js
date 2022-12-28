@@ -1,6 +1,5 @@
 import {getDmzKeysFromWords} from "../ocr.js";
 
-// todo there is one push of keys that is null?
 describe('ocr', () => {
 
     test('should return an array with DMZ keys that match words passed in', () => {
