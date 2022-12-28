@@ -4,6 +4,7 @@
   import {recognize} from "$scripts/ocr/recognize";
 
   let progress = 0
+  let keys = []
 
   const onFileSelected = (e) => {
     const image = e.target.files[0];
@@ -11,7 +12,9 @@
     reader.readAsDataURL(image);
     reader.onload = async (e) => {
       // clears out favorites with ones from file
-      $favorites = await recognize(e.target.result, (progressValue) => progress = progressValue)
+      keys = await recognize(e.target.result, (progressValue) => progress = progressValue)
+
+      $favorites = keys
     };
   }
 </script>
@@ -19,9 +22,18 @@
 <Panel panelTitle={"ocr"} openIcon={"./icons/heart.svg"} closeIconOffset={12}>
   <header>
     <h2>OCR Panel</h2>
-    {#if progress > 0}
+    {#if progress > 0 && progress < 100}
       <span>{progress}%</span>
     {/if}
+
+    <ul>
+    {#each keys as key}
+      <li>{key}</li>
+    {/each}
+    </ul>
+
+    {keys.length} keys
+
     <input on:change={(e)=>onFileSelected(e)} type="file" name="image" accept="image/*" capture="environment">
   </header>
 </Panel>
