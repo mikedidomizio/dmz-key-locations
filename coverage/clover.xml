@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1672261795598" clover="3.2.0">
+  <project timestamp="1672261795598" name="All files">
+    <metrics statements="43" coveredstatements="43" conditionals="18" coveredconditionals="18" methods="7" coveredmethods="7" elements="68" coveredelements="68" complexity="0" loc="43" ncloc="43" packages="2" files="2" classes="2"/>
+    <package name="data">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="key-data.js" path="H:\projects\dmz-key-locations\src\data\key-data.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="lib">
+      <metrics statements="42" coveredstatements="42" conditionals="18" coveredconditionals="18" methods="7" coveredmethods="7"/>
+      <file name="ocr.js" path="H:\projects\dmz-key-locations\src\lib\ocr.js">
+        <metrics statements="42" coveredstatements="42" conditionals="18" coveredconditionals="18" methods="7" coveredmethods="7"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="9216" type="stmt"/>
+        <line num="7" count="96" type="stmt"/>
+        <line num="9" count="96" type="stmt"/>
+        <line num="10" count="9216" type="stmt"/>
+        <line num="11" count="31872" type="stmt"/>
+        <line num="13" count="31872" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="13632" type="stmt"/>
+        <line num="15" count="13632" type="stmt"/>
+        <line num="17" count="18240" type="stmt"/>
+        <line num="22" count="96" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="6" type="stmt"/>
+        <line num="28" count="1140" type="stmt"/>
+        <line num="32" count="283" type="stmt"/>
+        <line num="34" count="283" type="stmt"/>
+        <line num="35" count="5871" type="stmt"/>
+        <line num="36" count="21352" type="cond" truecount="2" falsecount="0"/>
+        <line num="37" count="789" type="stmt"/>
+        <line num="41" count="283" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="90" type="stmt"/>
+        <line num="46" count="6" type="stmt"/>
+        <line num="48" count="6" type="stmt"/>
+        <line num="50" count="6" type="stmt"/>
+        <line num="51" count="780" type="stmt"/>
+        <line num="52" count="11700" type="cond" truecount="2" falsecount="0"/>
+        <line num="53" count="25" type="stmt"/>
+        <line num="59" count="6" type="stmt"/>
+        <line num="60" count="90" type="stmt"/>
+        <line num="61" count="90" type="stmt"/>
+        <line num="62" count="90" type="stmt"/>
+        <line num="64" count="90" type="cond" truecount="2" falsecount="0"/>
+        <line num="65" count="68" type="stmt"/>
+        <line num="66" count="283" type="stmt"/>
+        <line num="67" count="283" type="stmt"/>
+        <line num="69" count="283" type="cond" truecount="4" falsecount="0"/>
+        <line num="70" count="180" type="cond" truecount="4" falsecount="0"/>
+        <line num="71" count="60" type="stmt"/>
+        <line num="76" count="68" type="cond" truecount="2" falsecount="0"/>
+        <line num="77" count="54" type="stmt"/>
+        <line num="83" count="6" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
