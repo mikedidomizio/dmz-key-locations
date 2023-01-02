@@ -14,7 +14,11 @@
       // clears out favorites with ones from file
       keys = await recognize(e.target.result, (progressValue) => progress = progressValue)
 
-      $favorites = keys
+      // we update existing instead of overwriting because some users might apply multiple screenshots
+      $favorites = [...new Set([
+        ...$favorites,
+        ...keys
+      ])]
     };
   }
 </script>
@@ -26,13 +30,14 @@
       <span>{progress}%</span>
     {/if}
 
+    {keys.length} keys
+    <br/>
+
     <ul>
     {#each keys as key}
       <li>{key}</li>
     {/each}
     </ul>
-
-    {keys.length} keys
 
     <input on:change={(e)=>onFileSelected(e)} type="file" name="image" accept="image/*" capture="environment">
   </header>

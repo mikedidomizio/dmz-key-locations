@@ -1,9 +1,9 @@
 import Tesseract from "tesseract.js";
 import {getDmzKeysFromWords} from "./ocr.js";
 
-export const recognize = async(base64Image, callback) => {
+export const recognize = async(image, callback) => {
     return Tesseract.recognize(
-        base64Image,
+        image,
         'eng',
         { logger: m => {
                 if (m.status === 'recognizing text') {

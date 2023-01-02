@@ -1,3 +1,7 @@
+/**
+ * (running the following as a jsdom test environment will fail on OSX)
+ * @jest-environment node
+ */
 import {recognize} from "../recognize.js";
 
 test('should parse an image with keys that have shifting text', async() => {
